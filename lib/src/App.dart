@@ -2,6 +2,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio_web/src/widgets/build_body.dart';
+import 'package:flutter_portfolio_web/src/widgets/button_row.dart';
 import 'package:flutter_portfolio_web/src/widgets/contract_button.dart';
 
 class App extends StatelessWidget {
@@ -50,72 +52,16 @@ class App extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          Body(),
+          BuildBody(),
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: Padding(
+              padding: const EdgeInsets.all(48.0),
+              child: ButtonRow(),
+            )
+          ),
         ],
       ),
-    );
-  }
-}
-
-class Body extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Expanded(
-            flex: 1,
-            child: Container(
-              color: Colors.white,
-              child: Column(
-                children: [
-                  Expanded(
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Opacity(
-                          opacity: 0.4,
-                          child: Image.asset('headshot.png'),
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'I \'m Mike. \na software developer \nand dreamer',
-                              style: TextStyle(
-                                  fontSize: 44, color: Colors.blueGrey),
-                              textAlign: TextAlign.center,
-                              // 'I \'m bskim'
-                            ),
-                            Container(
-                              // color: Colors.pink,
-                              // height: 100,
-                              child: Align(
-                                alignment: Alignment.centerLeft,
-                                child: ContactButton(
-                                  buttonText: 'Drop me a line',
-                                  icon: Icon(Icons.email_outlined),
-                                  onPressed: () {
-                                    print('email');
-                                  }
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            )),
-        Expanded(
-            // flex: 2,
-            child: Container(
-              color: Colors.green,
-            )),
-      ],
     );
   }
 }

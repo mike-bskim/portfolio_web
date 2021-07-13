@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio_web/src/utils/util.dart';
 import 'package:flutter_portfolio_web/src/widgets/contract_button.dart';
 
 class BuildBody extends StatelessWidget {
@@ -70,6 +71,7 @@ class BuildBody extends StatelessWidget {
                                     icon: Icon(Icons.email_outlined),
                                     onPressed: () {
                                       print('email');
+                                      launchMailto();
                                     }
                                 ),
                               ),
@@ -137,4 +139,5 @@ class BuildBody extends StatelessWidget {
       ],
     );
   }
+
 }

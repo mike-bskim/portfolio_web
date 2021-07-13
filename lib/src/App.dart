@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio_web/src/utils/util.dart';
 import 'package:flutter_portfolio_web/src/widgets/build_body.dart';
 import 'package:flutter_portfolio_web/src/widgets/button_row.dart';
 import 'package:flutter_portfolio_web/src/widgets/contract_button.dart';
@@ -45,6 +46,7 @@ class App extends StatelessWidget {
             icon: Icon(Icons.add),
             onPressed: () {
               print('Contact me');
+              launchMailto();
             },
           ),
           Padding(padding: const EdgeInsets.all(16.0)),
